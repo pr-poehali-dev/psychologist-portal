@@ -225,9 +225,9 @@ const Index = () => {
               </div>
             </Card>
 
-            {/* Specialist 3 */}
-            <Card className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <div className="flex flex-col sm:flex-row">
+          </div>
+        </div>
+      </section>
                 <div className="sm:w-1/3">
                   <img
                     src="https://images.unsplash.com/photo-1594824944231-598dd3e85fdb?w=300&h=400&fit=crop&crop=face"
