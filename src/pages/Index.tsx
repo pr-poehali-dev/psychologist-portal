@@ -1,12 +1,275 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import Icon from "@/components/ui/icon";
 
 const Index = () => {
+  const services = [
+    {
+      title: "Индивидуальная терапия",
+      description:
+        "Работа с тревогой, депрессией, травмами и жизненными кризисами",
+      icon: "User",
+    },
+    {
+      title: "Семейная терапия",
+      description: "Помощь в решении семейных конфликтов и улучшении отношений",
+      icon: "Users",
+    },
+    {
+      title: "Групповая терапия",
+      description: "Работа в группе для развития социальных навыков",
+      icon: "Users2",
+    },
+  ];
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4 color-black text-black">Добро пожаловать!</h1>
-        <p className="text-xl text-gray-600">тут будет отображаться ваш проект</p>
-      </div>
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+      {/* Header */}
+      <header className="bg-white shadow-sm border-b">
+        <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+          <h1 className="text-2xl font-bold text-violet-700">
+            Психологический кабинет
+          </h1>
+          <Button className="bg-violet-600 hover:bg-violet-700">
+            <Icon name="Phone" size={16} />
+            Записаться
+          </Button>
+        </div>
+      </header>
+
+      {/* Hero Section */}
+      <section className="py-20 px-4">
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 className="text-5xl font-bold text-slate-800 mb-6 leading-tight">
+              Помощь в трудные{" "}
+              <span className="text-violet-600">моменты жизни</span>
+            </h2>
+            <p className="text-xl text-slate-600 mb-8 leading-relaxed">
+              Профессиональная психологическая помощь в безопасной и
+              поддерживающей обстановке. Вместе мы найдем пути к внутренней
+              гармонии и благополучию.
+            </p>
+            <div className="flex gap-4">
+              <Button size="lg" className="bg-violet-600 hover:bg-violet-700">
+                <Icon name="Calendar" size={20} />
+                Записаться на консультацию
+              </Button>
+              <Button variant="outline" size="lg">
+                <Icon name="MessageCircle" size={20} />
+                Задать вопрос
+              </Button>
+            </div>
+          </div>
+          <div className="relative">
+            <div className="bg-gradient-to-br from-violet-100 to-purple-100 rounded-2xl p-8 shadow-xl">
+              <img
+                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&h=600&fit=crop&crop=face"
+                alt="Психолог"
+                className="w-full h-96 object-cover rounded-xl shadow-lg"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="py-20 px-4 bg-slate-50">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h3 className="text-4xl font-bold text-slate-800 mb-4">Услуги</h3>
+            <p className="text-xl text-slate-600">
+              Индивидуальный подход к каждому клиенту
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {services.map((service, index) => (
+              <Card
+                key={index}
+                className="hover:shadow-lg transition-shadow duration-300 border-0 shadow-md"
+              >
+                <CardHeader className="text-center pb-4">
+                  <div className="w-16 h-16 bg-violet-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Icon
+                      name={service.icon}
+                      size={32}
+                      className="text-violet-600"
+                    />
+                  </div>
+                  <CardTitle className="text-xl text-slate-800">
+                    {service.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-center text-slate-600 leading-relaxed">
+                    {service.description}
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section className="py-20 px-4">
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <img
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=600&fit=crop&crop=face"
+              alt="Кабинет психолога"
+              className="w-full h-96 object-cover rounded-xl shadow-xl"
+            />
+          </div>
+          <div>
+            <h3 className="text-4xl font-bold text-slate-800 mb-6">
+              О специалисте
+            </h3>
+            <div className="space-y-6 text-slate-600 leading-relaxed">
+              <p className="text-lg">
+                <strong className="text-slate-800">Анна Петрова</strong> —
+                дипломированный психолог с 8-летним опытом работы.
+                Специализируется на когнитивно-поведенческой терапии и
+                гештальт-подходе.
+              </p>
+              <div className="space-y-3">
+                <div className="flex items-center gap-3">
+                  <Icon
+                    name="GraduationCap"
+                    size={20}
+                    className="text-violet-600"
+                  />
+                  <span>МГУ им. М.В. Ломоносова, факультет психологии</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Icon name="Award" size={20} className="text-violet-600" />
+                  <span>Сертификат по когнитивно-поведенческой терапии</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Icon name="Users" size={20} className="text-violet-600" />
+                  <span>Более 1000 успешно проведенных сессий</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-20 px-4 bg-violet-50">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h3 className="text-4xl font-bold text-slate-800 mb-4">
+              Контакты и запись
+            </h3>
+            <p className="text-xl text-slate-600">
+              Сделайте первый шаг к переменам
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12">
+            <Card className="border-0 shadow-lg">
+              <CardHeader>
+                <CardTitle className="text-2xl text-center text-slate-800">
+                  Свяжитесь со мной
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="flex items-center gap-4">
+                  <Icon name="Phone" size={24} className="text-violet-600" />
+                  <div>
+                    <p className="font-semibold text-slate-800">
+                      +7 (999) 123-45-67
+                    </p>
+                    <p className="text-slate-600">Пн-Пт: 9:00-20:00</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <Icon name="Mail" size={24} className="text-violet-600" />
+                  <div>
+                    <p className="font-semibold text-slate-800">
+                      anna@psychology.ru
+                    </p>
+                    <p className="text-slate-600">Ответ в течение 24 часов</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <Icon name="MapPin" size={24} className="text-violet-600" />
+                  <div>
+                    <p className="font-semibold text-slate-800">
+                      ул. Пушкина, д. 10
+                    </p>
+                    <p className="text-slate-600">Москва, м. Чистые пруды</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-lg">
+              <CardHeader>
+                <CardTitle className="text-2xl text-center text-slate-800">
+                  Записаться на прием
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="space-y-2">
+                  <label className="text-sm font-semibold text-slate-700">
+                    Ваше имя
+                  </label>
+                  <input
+                    type="text"
+                    className="w-full p-3 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
+                    placeholder="Введите ваше имя"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-sm font-semibold text-slate-700">
+                    Телефон
+                  </label>
+                  <input
+                    type="tel"
+                    className="w-full p-3 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500"
+                    placeholder="+7 (999) 123-45-67"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-sm font-semibold text-slate-700">
+                    Сообщение
+                  </label>
+                  <textarea
+                    className="w-full p-3 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-violet-500 h-24"
+                    placeholder="Кратко опишите вашу ситуацию..."
+                  />
+                </div>
+                <Button
+                  className="w-full bg-violet-600 hover:bg-violet-700"
+                  size="lg"
+                >
+                  <Icon name="Send" size={20} />
+                  Отправить заявку
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-slate-800 text-white py-8 px-4">
+        <div className="max-w-6xl mx-auto text-center">
+          <p className="text-slate-300">
+            © 2024 Психологический кабинет Анны Петровой. Конфиденциальность
+            гарантирована.
+          </p>
+        </div>
+      </footer>
     </div>
   );
 };
