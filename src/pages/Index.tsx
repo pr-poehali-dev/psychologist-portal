@@ -120,44 +120,204 @@ const Index = () => {
 
       {/* About Section */}
       <section className="py-20 px-4">
-        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <img
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=600&fit=crop&crop=face"
-              alt="Кабинет психолога"
-              className="w-full h-96 object-cover rounded-xl shadow-xl"
-            />
-          </div>
-          <div>
-            <h3 className="text-4xl font-bold text-slate-800 mb-6">
-              О специалисте
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h3 className="text-4xl font-bold text-slate-800 mb-4">
+              Наши специалисты
             </h3>
-            <div className="space-y-6 text-slate-600 leading-relaxed">
-              <p className="text-lg">
-                <strong className="text-slate-800">Анна Петрова</strong> —
-                дипломированный психолог с 8-летним опытом работы.
-                Специализируется на когнитивно-поведенческой терапии и
-                гештальт-подходе.
-              </p>
-              <div className="space-y-3">
-                <div className="flex items-center gap-3">
-                  <Icon
-                    name="GraduationCap"
-                    size={20}
-                    className="text-violet-600"
+            <p className="text-xl text-slate-600">
+              Команда опытных психологов для вашего благополучия
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-8">
+            {/* Specialist 1 */}
+            <Card className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div className="flex flex-col sm:flex-row">
+                <div className="sm:w-1/3">
+                  <img
+                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=400&fit=crop&crop=face"
+                    alt="Анна Петрова"
+                    className="w-full h-48 sm:h-full object-cover"
                   />
-                  <span>МГУ им. М.В. Ломоносова, факультет психологии</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <Icon name="Award" size={20} className="text-violet-600" />
-                  <span>Сертификат по когнитивно-поведенческой терапии</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Icon name="Users" size={20} className="text-violet-600" />
-                  <span>Более 1000 успешно проведенных сессий</span>
+                <div className="sm:w-2/3 p-6">
+                  <h4 className="text-xl font-bold text-slate-800 mb-2">
+                    Анна Петрова
+                  </h4>
+                  <p className="text-violet-600 font-semibold mb-3">
+                    Когнитивно-поведенческая терапия
+                  </p>
+                  <div className="space-y-2 text-sm text-slate-600">
+                    <div className="flex items-center gap-2">
+                      <Icon
+                        name="Award"
+                        size={16}
+                        className="text-violet-600"
+                      />
+                      <span>8 лет опыта</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Icon
+                        name="GraduationCap"
+                        size={16}
+                        className="text-violet-600"
+                      />
+                      <span>МГУ им. М.В. Ломоносова</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Icon
+                        name="Users"
+                        size={16}
+                        className="text-violet-600"
+                      />
+                      <span>1000+ сессий</span>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Card>
+
+            {/* Specialist 2 */}
+            <Card className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div className="flex flex-col sm:flex-row">
+                <div className="sm:w-1/3">
+                  <img
+                    src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=300&h=400&fit=crop&crop=face"
+                    alt="Михаил Соколов"
+                    className="w-full h-48 sm:h-full object-cover"
+                  />
+                </div>
+                <div className="sm:w-2/3 p-6">
+                  <h4 className="text-xl font-bold text-slate-800 mb-2">
+                    Михаил Соколов
+                  </h4>
+                  <p className="text-violet-600 font-semibold mb-3">
+                    Семейная и парная терапия
+                  </p>
+                  <div className="space-y-2 text-sm text-slate-600">
+                    <div className="flex items-center gap-2">
+                      <Icon
+                        name="Award"
+                        size={16}
+                        className="text-violet-600"
+                      />
+                      <span>12 лет опыта</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Icon
+                        name="GraduationCap"
+                        size={16}
+                        className="text-violet-600"
+                      />
+                      <span>СПбГУ, психологический факультет</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Icon
+                        name="Users"
+                        size={16}
+                        className="text-violet-600"
+                      />
+                      <span>800+ пар и семей</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Card>
+
+            {/* Specialist 3 */}
+            <Card className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div className="flex flex-col sm:flex-row">
+                <div className="sm:w-1/3">
+                  <img
+                    src="https://images.unsplash.com/photo-1594824944231-598dd3e85fdb?w=300&h=400&fit=crop&crop=face"
+                    alt="Елена Васильева"
+                    className="w-full h-48 sm:h-full object-cover"
+                  />
+                </div>
+                <div className="sm:w-2/3 p-6">
+                  <h4 className="text-xl font-bold text-slate-800 mb-2">
+                    Елена Васильева
+                  </h4>
+                  <p className="text-violet-600 font-semibold mb-3">
+                    Детская и подростковая психология
+                  </p>
+                  <div className="space-y-2 text-sm text-slate-600">
+                    <div className="flex items-center gap-2">
+                      <Icon
+                        name="Award"
+                        size={16}
+                        className="text-violet-600"
+                      />
+                      <span>6 лет опыта</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Icon
+                        name="GraduationCap"
+                        size={16}
+                        className="text-violet-600"
+                      />
+                      <span>РГГУ, клиническая психология</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Icon
+                        name="Users"
+                        size={16}
+                        className="text-violet-600"
+                      />
+                      <span>500+ детей и подростков</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Card>
+
+            {/* Specialist 4 */}
+            <Card className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <div className="flex flex-col sm:flex-row">
+                <div className="sm:w-1/3">
+                  <img
+                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=400&fit=crop&crop=face"
+                    alt="Дмитрий Кузнецов"
+                    className="w-full h-48 sm:h-full object-cover"
+                  />
+                </div>
+                <div className="sm:w-2/3 p-6">
+                  <h4 className="text-xl font-bold text-slate-800 mb-2">
+                    Дмитрий Кузнецов
+                  </h4>
+                  <p className="text-violet-600 font-semibold mb-3">
+                    Гештальт-терапия и травматерапия
+                  </p>
+                  <div className="space-y-2 text-sm text-slate-600">
+                    <div className="flex items-center gap-2">
+                      <Icon
+                        name="Award"
+                        size={16}
+                        className="text-violet-600"
+                      />
+                      <span>10 лет опыта</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Icon
+                        name="GraduationCap"
+                        size={16}
+                        className="text-violet-600"
+                      />
+                      <span>ВШЭ, психологический факультет</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Icon
+                        name="Users"
+                        size={16}
+                        className="text-violet-600"
+                      />
+                      <span>700+ клиентов с травмами</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Card>
           </div>
         </div>
       </section>
